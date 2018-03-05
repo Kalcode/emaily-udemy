@@ -4,11 +4,11 @@ import './Modal.css'
 
 export default class Modal extends Component {
 
-    componentDidMount() {
-      if (this.props.opened) document.body.style.overflow = 'hidden'
-    }
+  componentDidMount() {
+    if (this.props.opened) document.body.style.overflow = 'hidden'
+  }
 
-    componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.opened !== this.props.opened) {
       if (nextProps.opened) document.body.style.overflow = 'hidden'
       else document.body.removeAttribute('style')
