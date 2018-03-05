@@ -28,8 +28,8 @@ export default class Modal extends Component {
         <div className={opened ? 'modal-open' : null }>
           <div className='modal-overlay' />
           <div id='modal1' className='modal'>
+            <h4 className='modal-title'>{title}</h4>
             <div className='modal-content'>
-              <h4>{title}</h4>
               <p>{children}</p>
             </div>
             <div className='modal-footer'>

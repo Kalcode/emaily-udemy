@@ -16,6 +16,17 @@
   animation-iteration-count: 1;
 }
 
+.modal-title {
+  color: white;
+  background-color: #ee6e73;
+  padding: 10px 20px;
+  margin-bottom: 0;
+}
+
+#modal1 .modal-content {
+  padding: 10px 24px;
+}
+
 #modal1 {
   animation-name: zoomIn;
   animation-duration: 0.25s;
