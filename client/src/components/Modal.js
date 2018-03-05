@@ -3,15 +3,17 @@ import { createPortal } from 'react-dom'
 import './Modal.css'
 
 export default class Modal extends Component {
-  // state = {
-  //   opened: false,
-  // }
-  //
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.opened !== this.props.opened) {
-  //     this.setState({ opened: true })
-  //   }
-  // }
+
+    componentDidMount() {
+      if (this.props.opened) document.body.style.overflow = 'hidden'
+    }
+
+    componentWillReceiveProps(nextProps) {
+    if (nextProps.opened !== this.props.opened) {
+      if (nextProps.opened) document.body.style.overflow = 'hidden'
+      else document.body.removeAttribute('style')
+    }
+  }
 
   onClick = (e) => {
     this.setState({ opened: false })

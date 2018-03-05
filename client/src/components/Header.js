@@ -11,7 +11,6 @@ class Header extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props);
     if (this.props.auth && (nextProps.auth.credits > this.props.auth.credits)) {
       this.setState({ modal: true })
     }
