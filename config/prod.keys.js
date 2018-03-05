@@ -7,7 +7,7 @@ module.exports = {
   mongoURI: process.env.MONGO_URI,
 
   // Cookie-Sessions
-  cookieKey: process.env.COOKIE_KEY
+  cookieKey: process.env.COOKIE_KEY,
 
   // Strip API
   stripeSecretKey: process.env.STRIPE_SECRET_KEY,
