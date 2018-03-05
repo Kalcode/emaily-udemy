@@ -26,6 +26,17 @@ app.use(passport.session())
 require('./routes/authRoutes')(app)
 require('./routes/billingRoutes')(app)
 
+if (process.env.NODE_ENV === 'production') {
+  // Serve static assets
+  app.use(express.static('client/build'))
+
+  // Serve index.html for non routed paths
+  const path = require('path')
+  app.get('*', (req, res) => {
+    res.send(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log('\n\x1b[33mServer running on:\x1b[34m http://localhost:' + PORT + '\x1b[0m \n')
